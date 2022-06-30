@@ -17,7 +17,6 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
 	int fst, lst;
 	for (int i = 0; i < size; i++) {
 		// < 방법 1 >
-
 		// 1. 각 정해진 크기만큼 배열 잘라 복사 
 		temp.clear();
 		fst = commands[i][0] - 1; 
