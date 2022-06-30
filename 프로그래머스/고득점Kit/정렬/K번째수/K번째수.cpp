@@ -33,8 +33,8 @@ vector<int> solution(vector<int> array, vector<vector<int>> commands) {
 
 
 		// < 방법 2 >   ↓ 다음과 같은 세줄로 요약 가능 
-		temp = array;	// 1. [벡터복사]로 clear, resize, copy 과정 생략 가능   ***
-		sort(temp.begin() + commands[i][0] - 1, temp.begin() + commands[i][1]);	// 2. 필요한 부분만 정렬 
+		temp = array;																// 1. [벡터복사]로 clear, resize, copy 과정 생략 가능   ***
+		sort(temp.begin() + commands[i][0] - 1, temp.begin() + commands[i][1]);		// 2. 필요한 부분만 정렬 
 		answer.push_back(temp[commands[i][0] + commands[i][2] - 2]);
 
 	}
