@@ -4,8 +4,7 @@
 정답이 반드시 vector에 포함된 값일 필요가 없다. 
 
 <제한사항>
-vector 크기 : 1이상 1000 이하   →   2중 for문 까진 사용 가능! 
-*/
+vector 크기 : 1이상 1000 이하   →   2중 for문 까진 사용 가능! */
 
 #include <string>
 #include <vector>
@@ -33,7 +32,7 @@ int solution(vector<int> citations) {
 			if (cnt >= answer)
 				return answer;
 		}
-		answer--;		// *** 
+		answer--;	// *** 
 	}
 	return answer;
 }
