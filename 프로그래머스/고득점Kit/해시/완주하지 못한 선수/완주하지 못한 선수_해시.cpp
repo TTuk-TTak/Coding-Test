@@ -39,9 +39,8 @@ string solution(vector<string> participant, vector<string> completion) {
     
     /*
     // 출력 확인 
-    for(auto elem=um.begin(); elem!=um.end(); elem++){  //for(auto elem: um){
-        cout<<(elem->first)<<"\n";
-    }*/
+    for(auto elem=um.begin(); elem!=um.end(); elem++)  //for(auto elem: um)
+        cout<<(elem->first)<<"\n";  */
     
     // 2. 참여자 listing - 제외
     for(auto elem: participant){
