@@ -5,7 +5,11 @@
 <제한사항>
  1. nums의 길이(N) 1 ~ 10,000 이하
  2. 폰켓몬의 종류 번호 1 ~ 200,000 이하
- => 정렬 or 해시 or 그리디 or DP                        */
+ => 정렬 or 해시 or 그리디 or DP       
+ 
+ <기억사항>
+ 1. hash[key] += 1; 와 같은 방식으로 연산하면, key값이 없어도, 자동으로 insert 후 연산 ***     
+ 2. min 함수로 최소값 return 가능                                                         */
 
 #include <vector>
 #include <unordered_map>
@@ -23,6 +27,7 @@ int solution(vector<int> nums)
     // 2. 포켓몬 별 개수 세기 => map에 추가 
     for(auto elem: nums){
         um.insert(make_pair(elem,1));
+        //um[elem] += 1;      // or 이 방법으로 insert + 연산 바로 
     }
     
     // 3. [포켓몬 종류 수] VS  [가져갈 수 있는 최대 개수] 비교 후 더 큰 값 return 
@@ -30,5 +35,6 @@ int solution(vector<int> nums)
         return max_size;
     else
         return um.size();
+    //  return min(nums.size() / 2, s.size()); 로 한줄정리 가능
 
 }
