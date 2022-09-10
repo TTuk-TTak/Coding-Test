@@ -1,3 +1,12 @@
+/* 종류의 개수 세는 문제 
+<유의점>
+ 1. 종류별 폰켓몬 개수는 세지 않아도 됨! 
+ 
+<제한사항>
+ 1. nums의 길이(N) 1 ~ 10,000 이하
+ 2. 폰켓몬의 종류 번호 1 ~ 200,000 이하
+ => 정렬 or 해시 or 그리디 or DP                        */
+
 #include <vector>
 #include <unordered_map>
 #include <iostream>
@@ -13,12 +22,7 @@ int solution(vector<int> nums)
    
     // 2. 포켓몬 별 개수 세기 => map에 추가 
     for(auto elem: nums){
-        // map에 아직 추가되지 않았다면
-        if(um.find(elem) == um.end())
-            um.insert(make_pair(elem,1));
-        // map에 이미 추가되어 있다면
-        else
-            um[elem]++;
+        um.insert(make_pair(elem,1));
     }
     
     // 3. [포켓몬 종류 수] VS  [가져갈 수 있는 최대 개수] 비교 후 더 큰 값 return 
