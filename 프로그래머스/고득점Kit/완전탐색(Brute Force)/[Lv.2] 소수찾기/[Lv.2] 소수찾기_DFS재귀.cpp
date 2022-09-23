@@ -26,7 +26,10 @@
     string s(v.begin(), v.end());  
  2. vector를 resize후 push_back 하면,    
     resize된만큼의 공간 앞에 비우고, 그 뒤로부터 들어감 => 오류발생 가능성    *** 
- 3. typeid()    :변수의 type을 출력해주는 함수
+ 3. {vector<char>}와 {string}은 완전히 같음!!!                         ***
+    - string a = b로 string 복사 가능 
+    - string 선언 시, ="  " 등으로 공간배분만 한다면, string[idx]로 vector와 똑같이 인덱스 접근 가능하다.   ***
+ 4. typeid()    :변수의 type을 출력해주는 함수
     #include <typeinfo>로 사용 */
 
 #include <string>
@@ -36,9 +39,9 @@
 
 using namespace std;
 
-vector<char> lists;             // 숫자카드 모두 뽑아 list에 넣기  
+vector<char> lists;             // 숫자카드 모두 뽑아 list에 넣기    // vector<char> = string  과 완전 동치! ***
 vector<int> visited;            // 사용한 카드 재사용 x
-vector<char> path(7);           // 경우의 수 저장용 
+vector<char> path(7);           // 경우의 수 저장용                // = {string path="       "} : size하는 대신, 스페이스바 *7번으로 공간 배분 ***
 unordered_map<int, int> ans;    // answer세며 중복 제거 위함 
 
 
@@ -70,7 +73,7 @@ void recur(int val,int level, int digit){   // digit자릿수의 모든 경우�
     for(int i=0; i<lists.size(); i++){
         if(visited[i] == 0){
             visited[i]=1;
-            path[level] = lists[i];
+            path[level] = lists[i];         // path가 string이어도, 공간배분"  "만 했다면, path[idx]로 접근가능
             recur(lists[i], level+1, digit);   // ***
             visited[i]=0;
         }
@@ -81,7 +84,7 @@ void recur(int val,int level, int digit){   // digit자릿수의 모든 경우�
 int solution(string numbers) {
     // lists벡터에 숫자카드 종류 하나씩 넣음 
     visited.resize(numbers.length(), 0);
-    for(int i=0; i<numbers.length(); i++){
+    for(int i=0; i<numbers.length(); i++){      // lists를 string으로 한다면 lists = numbers로 한줄요약 가능 ***
         lists.push_back(numbers[i]);
     }
     
