@@ -29,6 +29,8 @@
  3. {vector<char>}와 {string}은 완전히 같음!!!                         ***
     - string a = b로 string 복사 가능 
     - string 선언 시, ="  " 등으로 공간배분만 한다면, string[idx]로 vector와 똑같이 인덱스 접근 가능하다.   ***
+ 4. unordered_map 은     < , >      key-value쌍 저장    중복X         *** 
+    set은                <  >       value 하나만 저장    중복X
  4. typeid()    :변수의 type을 출력해주는 함수
     #include <typeinfo>로 사용 */
 
@@ -94,4 +96,3 @@ int solution(string numbers) {
     }
     
     return ans.size();
-}
