@@ -11,7 +11,7 @@ vector<string> path;  // (TIKS+1)로 resize
 vector<int> visited;  // (TIKS)로 resize
 
 void recur(int lv, string city){
-    cout<<city<<"\n";
+    cout<<city<<" "<<lv<<"\n";
     path[lv] = city;
     // level
     if(lv >= TIKS){
