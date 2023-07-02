@@ -24,7 +24,7 @@ int solution(vector<int> people, int limit) {
     deque<int> dq(people.begin(), people.end());       
     
     // 3. 
-    int sum = limit;b   
+    int sum = limit; 
     while(!dq.empty()){
         if(sum>=dq.front()){
                 sum-=dq.front();
